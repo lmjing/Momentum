@@ -6,19 +6,20 @@
     <link rel="stylesheet" href="src/style.css">
 </head>
 <body>
-    <img alt="background">
-    <div id="name-content" class="hidden">
-        <form id="login">
-            <h2>What's your name?</h2>
-            <input type="text" required id="name-input" name="name">
-        </form>
-    </div>
-    <div id="main-content">
-        <h2 id="clock">00:00:00</h2>
-        <h3>Hello, Name</h3>
-        <script src="src/main.js" type="module"></script>
-        <script src="src/timer.js" type="module"></script>
-        <script src="src/background.js" type="module"></script>
-    </div>
+    <main id="app">
+        <div id="greeting" class="content hidden">
+            <form id="login">
+                <h2>What's your name?</h2>
+                <input type="text" required id="name-input" name="name">
+            </form>
+        </div>
+        <div id="main">
+            <div class="content">
+                <h2 id="clock">00:00:00</h2>
+                <h3>Hello, Name</h3>
+            </div>
+        </div>
+    </main>
+    <script src="src/main.js" type="module"></script>
 </body>
 </html>

@@ -6,6 +6,16 @@ const images = [
     "images/4.jpg",
 ]
 
-const background = document.querySelector("body img");
-const random = Math.floor(Math.random() * images.length);
-background.src = images[random];
+export default class Background {
+
+    $target = null
+
+    constructor($target) {
+        this.$target = $target;
+
+        console.log($target)
+
+        const random = Math.floor(Math.random() * images.length);
+        $target.style.backgroundImage = `url(${images[random]})`;
+    }
+}
