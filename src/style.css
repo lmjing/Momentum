@@ -27,3 +27,16 @@ body {
     font-weight: bold;
     font-size: 5em;
 }
+#todo {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 20px;
+}
+#todo #todo-button {
+    padding: 15px;
+    background: none;
+    border: 0;
+    color: white;
+    font-size: 1.3em;
+}

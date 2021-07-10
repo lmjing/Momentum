@@ -13,8 +13,6 @@ export default class Background {
     constructor($target) {
         this.$target = $target;
 
-        console.log($target)
-
         const random = Math.floor(Math.random() * images.length);
         $target.style.backgroundImage = `url(${images[random]})`;
     }

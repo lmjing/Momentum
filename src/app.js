@@ -1,5 +1,6 @@
 import timer from "./timer.js";
 import Background from "./background.js";
+import Todo from "./todo.js";
 
 const greetingContent = document.getElementById("greeting");
 const mainContent = document.getElementById("main");
@@ -13,6 +14,7 @@ const CLASS_HIDDEN = "hidden";
 const initMainContent = () => {
     timer();
     greetingMsg.innerText = `Hello, ${localStorage.getItem(KEY_USER_NAME)}`;
+    const todo = new Todo(document.getElementById("todo"));
 }
 
 const click = function (event) {
