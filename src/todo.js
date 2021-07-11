@@ -10,17 +10,25 @@ export default class Todo {
 
     todoList = undefined
 
-    createTodoItemEl = (text) => {
+    createTodoItemEl = (item) => {
+        const {text, id} = item;
         const li = document.createElement("li");
-        li.innerText = text.toString();
+        li.innerText = text;
+        li.id = id;
+        const btn = document.createElement("button");
+        btn.innerText = 'X'
+        btn.className = CLASS_NAME.DELETE_BTN;
+        btn.addEventListener("click", this.deleteItem)
+
+        li.appendChild(btn);
         this.$list.appendChild(li);
     }
-    initTodoList = () => {
+    initTodoList = async () => {
         if (!this.todoList) {
             const saved = localStorage.getItem(STORAGE_KEY.TODO_LIST);
             this.todoList = JSON.parse(saved) || [];
-            this.todoList.forEach(text => {
-                this.createTodoItemEl(text);
+            await this.todoList.forEach(item => {
+                this.createTodoItemEl(item);
             })
         }
     }
@@ -32,11 +40,21 @@ export default class Todo {
     }
     addNewItem = e => {
         e.preventDefault();
-        const text = this.$input.value;
-        this.todoList.push(text);
+        const newItem = {
+            text: this.$input.value,
+            id: Date.now().toString()
+        }
+        this.todoList.push(newItem);
         localStorage.setItem(STORAGE_KEY.TODO_LIST, JSON.stringify(this.todoList));
-        this.createTodoItemEl(text);
+        this.createTodoItemEl(newItem);
         this.$input.value = null;
+    }
+    deleteItem = async (e) => {
+        e.preventDefault();
+        const li = e.target.parentElement;
+        this.todoList = await this.todoList.filter(item => item.id !== li.id);
+        localStorage.setItem(STORAGE_KEY.TODO_LIST, JSON.stringify(this.todoList));
+        li.parentElement.removeChild(li);
     }
     constructor($target) {
         this.$target = $target;

@@ -1,5 +1,6 @@
 export const CLASS_NAME = {
-    HIDDEN: "hidden"
+    HIDDEN: "hidden",
+    DELETE_BTN: "delete-btn"
 }
 
 export const STORAGE_KEY = {
