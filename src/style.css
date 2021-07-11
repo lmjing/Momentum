@@ -33,12 +33,54 @@ body {
     bottom: 0;
     margin: 20px;
 }
-#todo #todo-button {
-    padding: 15px;
+button {
     background: none;
     border: 0;
     color: white;
+}
+input {
+    background: #ffffff00;
+    border: none;
+    border-bottom: 1px white solid;
+    color: white;
+    padding: 10px 5px;
+}
+input::placeholder {
+    color: darkgrey;
+}
+input:focus-visible {
+    outline: none;
+}
+#todo #todo-button {
     font-size: 1.3em;
+    padding: 15px;
+}
+#todo #todo-content {
+    background: #0000009e;
+    padding: 10px;
+    border-radius: 3px;
+    min-width: 250px;
+}
+#todo #todo-content .header {
+    padding: 10px;
+}
+#todo #todo-content .close {
+    background: no-repeat;
+    border: none;
+    color: white;
+    font-weight: 100;
+    float: right;
+}
+#todo #todo-content ul {
+    padding-left: 20px;
+    list-style: square;
+}
+#todo #todo-content ul li {
+    padding: 5px 0;
+}
+#todo #todo-content #todo-form * {
+    width: calc(100% - 10px);
+    border-bottom: 1px #ffffff14 solid;
 }
 #weather {
     text-align: right;

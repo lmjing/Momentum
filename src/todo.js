@@ -17,7 +17,7 @@ export default class Todo {
         li.id = id;
         const btn = document.createElement("button");
         btn.innerText = 'X'
-        btn.className = CLASS_NAME.DELETE_BTN;
+        btn.classList.add(CLASS_NAME.DELETE_BTN)
         btn.addEventListener("click", this.deleteItem)
 
         li.appendChild(btn);
