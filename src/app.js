@@ -1,6 +1,7 @@
 import timer from "./timer.js";
 import Background from "./background.js";
 import Todo from "./todo.js";
+import Weather from "./weather.js";
 
 const greetingContent = document.getElementById("greeting");
 const mainContent = document.getElementById("main");
@@ -32,6 +33,7 @@ export default class App {
     constructor($target) {
         this.$target = $target;
         const background = new Background($target);
+        const weather = new Weather($target.querySelector("#weather")); // TODO 변경
 
         if (!localStorage.getItem(KEY_USER_NAME)) {
             greetingContent.classList.remove(CLASS_HIDDEN);
