@@ -32,11 +32,16 @@ export default class Todo {
             })
         }
     }
-    buttonClicked = e => {
+    showTodoList = e => {
         e.preventDefault();
         this.$button.classList.add(CLASS_NAME.HIDDEN);
         this.$content.classList.remove(CLASS_NAME.HIDDEN);
         this.initTodoList();
+    }
+    closeTodoList = e => {
+        e.preventDefault();
+        this.$button.classList.remove(CLASS_NAME.HIDDEN);
+        this.$content.classList.add(CLASS_NAME.HIDDEN);
     }
     addNewItem = e => {
         e.preventDefault();
@@ -64,8 +69,10 @@ export default class Todo {
         this.$list = $target.querySelector("ul");
         this.$form = $target.querySelector("form");
         this.$input = $target.querySelector("#todo-input");
+        const $todoClose = $target.querySelector("#todo-content .close");
 
-        this.$button.addEventListener("click", this.buttonClicked);
+        this.$button.addEventListener("click", this.showTodoList);
         this.$form.addEventListener("submit", this.addNewItem);
+        $todoClose.addEventListener("click", this.closeTodoList);
     }
 }
