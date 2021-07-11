@@ -15,9 +15,11 @@ export default class Todo {
         const li = document.createElement("li");
         li.innerText = text;
         li.id = id;
-        const btn = document.createElement("button");
-        btn.innerText = 'X'
+
+        const btn = document.createElement("i");
         btn.classList.add(CLASS_NAME.DELETE_BTN)
+        btn.classList.add("far")
+        btn.classList.add("fa-times-circle")
         btn.addEventListener("click", this.deleteItem)
 
         li.appendChild(btn);

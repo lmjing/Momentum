@@ -36,7 +36,11 @@ body {
 button {
     background: none;
     border: 0;
+    color: rgba(255, 255, 255, 0.49);
+}
+button:hover {
     color: white;
+    cursor: pointer;
 }
 input {
     background: #ffffff00;
@@ -57,19 +61,22 @@ input:focus-visible {
 }
 #todo #todo-content {
     background: #0000009e;
-    padding: 10px;
+    padding: 15px;
     border-radius: 3px;
     min-width: 250px;
 }
 #todo #todo-content .header {
-    padding: 10px;
+    padding: 5px;
 }
 #todo #todo-content .close {
     background: no-repeat;
     border: none;
-    color: white;
-    font-weight: 100;
+    color: rgba(255, 255, 255, 0.49);
     float: right;
+}
+#todo #todo-content .close:hover {
+    cursor: pointer;
+    color: white;
 }
 #todo #todo-content ul {
     padding-left: 20px;
@@ -77,6 +84,14 @@ input:focus-visible {
 }
 #todo #todo-content ul li {
     padding: 5px 0;
+}
+#todo #todo-content ul li .delete-btn{
+    padding-left: 10px;
+    color: rgba(255, 255, 255, 0.49);
+}
+#todo #todo-content ul li .delete-btn:hover{
+    cursor: pointer;
+    color: white;
 }
 #todo #todo-content #todo-form * {
     width: calc(100% - 10px);
